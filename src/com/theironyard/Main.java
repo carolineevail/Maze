@@ -23,6 +23,7 @@ public class Main {
 
     static ArrayList<Room> possibleNeighbors(ArrayList<ArrayList<Room>> rooms, int row, int col) {
         ArrayList<Room> neighbors = new ArrayList<>();
+
         try {
             neighbors.add(rooms.get(row - 1).get(col));
         } catch (Exception e) {}
@@ -45,7 +46,7 @@ public class Main {
         return neighbors;
     }
 
-    static Room randomNeighbor (ArrayList<ArrayList<Room>> rooms, int row, int col) {
+    static Room randomNeighbor(ArrayList<ArrayList<Room>> rooms, int row, int col) {
         ArrayList<Room> neighbors = possibleNeighbors(rooms, row, col);
         if (neighbors.size() > 0) {
             Random r = new Random();
@@ -56,19 +57,19 @@ public class Main {
     }
 
     static void tearDownWall(Room oldRoom, Room newRoom) {
-        //going up
+        // going up
         if (newRoom.row < oldRoom.row) {
             newRoom.hasBottom = false;
         }
-        //going down
+        // going down
         else if (newRoom.row > oldRoom.row) {
             oldRoom.hasBottom = false;
         }
-        //going left
+        // going left
         else if (newRoom.col < oldRoom.col) {
             newRoom.hasRight = false;
         }
-        //going right
+        // going right
         else if (newRoom.col > oldRoom.col) {
             oldRoom.hasRight = false;
         }

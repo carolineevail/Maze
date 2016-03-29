@@ -10,7 +10,7 @@ public class Room {
     boolean hasBottom = true;
     boolean hasRight = true;
 
-    public Room(int col, int row) {
+    public Room(int row, int col) {
         this.col = col;
         this.row = row;
     }
